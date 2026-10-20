@@ -180,10 +180,4 @@ Versi diagnostik ini menyimpan exception ke file berikut:
 Jika login berhasil tetapi dashboard gagal dimuat, aplikasi akan menampilkan pesan dan mempertahankan jendela login jika memungkinkan. Kirimkan isi file log tersebut untuk mengetahui penyebab pastinya. Jangan menghapus `kosku.db` sebelum membuat cadangan karena file tersebut berisi data lokal.
 
 
-### Jika aplikasi sebelumnya force close setelah login
-Versi ini menggunakan SQL Server. Data lama dari SQLite tidak dihapus, tetapi tidak otomatis digunakan oleh versi SQL Server.
-## Tema Light / Dark
 
-- Tombol **☾ Dark mode / ☀ Light mode** tersedia di halaman login dan header dashboard.
-- Pilihan tema disimpan di `%LOCALAPPDATA%\KosKu\theme.txt` dan tetap digunakan saat aplikasi dibuka kembali.
-- Saat tema diganti, halaman aktif dibuka ulang agar warna komponen dan style mengikuti palet yang dipilih.
