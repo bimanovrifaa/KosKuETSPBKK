@@ -1,0 +1,106 @@
+<Window x:Class="KosKu.Views.RegisterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Daftar Penghuni • KosKu" Height="790" Width="980" MinHeight="700" MinWidth="850"
+        WindowStartupLocation="CenterOwner" ResizeMode="CanResize"
+        Background="{StaticResource BrushAppBg}">
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Margin="2,0,2,18">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Border Width="44" Height="44" CornerRadius="12" Background="{StaticResource BrushPrimary}" VerticalAlignment="Center">
+                <TextBlock Text="⌂" FontSize="26" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Border>
+            <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="12,0,0,0">
+                <TextBlock Text="KosKu" FontSize="21" FontWeight="Bold" Foreground="{StaticResource BrushTextPrimary}" />
+                <TextBlock Text="Sistem Informasi Pengelolaan Kos Mahasiswa" FontSize="11" Foreground="{StaticResource BrushTextSecondary}" />
+            </StackPanel>
+            <Button Grid.Column="2" Content="Kembali ke Login" Style="{StaticResource BtnOutline}" Padding="12,8" Click="Cancel_Click" VerticalAlignment="Center" />
+        </Grid>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+            <Border Style="{StaticResource CardBorderStyle}" Padding="28" Margin="2">
+                <StackPanel>
+                    <TextBlock Text="Buat akun penghuni" FontSize="26" FontWeight="Bold" Foreground="{StaticResource BrushTextPrimary}" Margin="0,0,0,6" />
+                    <TextBlock Text="Daftar untuk melihat tagihan, mengirim bukti pembayaran, dan melaporkan kendala fasilitas kos." FontSize="13" Foreground="{StaticResource BrushTextSecondary}" TextWrapping="Wrap" Margin="0,0,0,20" />
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Grid.Row="0" Grid.Column="0" Margin="0,0,12,14">
+                            <TextBlock Text="Nama lengkap *" FontSize="12" FontWeight="SemiBold" Foreground="{StaticResource BrushTextSecondary}" Margin="0,0,0,6" />
+                            <TextBox x:Name="FullNameBox" Style="{StaticResource ModernTextBox}" MaxLength="100" />
+                        </StackPanel>
+                        <StackPanel Grid.Row="0" Grid.Column="1" Margin="12,0,0,14">
+                            <TextBlock Text="NIM / NPM *" FontSize="12" FontWeight="SemiBold" Foreground="{StaticResource BrushTextSecondary}" Margin="0,0,0,6" />
+                            <TextBox x:Name="StudentIdBox" Style="{StaticResource ModernTextBox}" MaxLength="50" />
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,0,12,14">
+                            <TextBlock Text="Universitas / kampus *" FontSize="12" FontWeight="SemiBold" Foreground="{StaticResource BrushTextSecondary}" Margin="0,0,0,6" />
+                            <TextBox x:Name="UniversityBox" Style="{StaticResource ModernTextBox}" MaxLength="150" />
+                        </StackPanel>
+                        <StackPanel Grid.Row="1" Grid.Column="1" Margin="12,0,0,14">
+                            <TextBlock Text="Nomor telepon / WhatsApp *" FontSize="12" FontWeight="SemiBold" Foreground="{StaticResource BrushTextSecondary}" Margin="0,0,0,6" />
+                            <TextBox x:Name="PhoneBox" Style="{StaticResource ModernTextBox}" MaxLength="30" />
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="2" Grid.Column="0" Margin="0,0,12,14">
+                            <TextBlock Text="Kontak darurat *" FontSize="12" FontWeight="SemiBold" Foreground="{StaticResource BrushTextSecondary}" Margin="0,0,0,6" />
+                            <TextBox x:Name="EmergencyContactBox" Style="{StaticResource ModernTextBox}" MaxLength="30" />
+                        </StackPanel>
+                        <StackPanel Grid.Row="2" Grid.Column="1" Margin="12,0,0,14">
+                            <TextBlock Text="Email aktif *" FontSize="12" FontWeight="SemiBold" Foreground="{StaticResource BrushTextSecondary}" Margin="0,0,0,6" />
+                            <TextBox x:Name="EmailBox" Style="{StaticResource ModernTextBox}" MaxLength="254" />
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="3" Grid.Column="0" Margin="0,0,12,14">
+                            <TextBlock Text="Username *" FontSize="12" FontWeight="SemiBold" Foreground="{StaticResource BrushTextSecondary}" Margin="0,0,0,6" />
+                            <TextBox x:Name="UsernameBox" Style="{StaticResource ModernTextBox}" MaxLength="30" />
+                            <TextBlock Text="3–30 karakter: huruf, angka, titik, _ atau -" FontSize="10" Foreground="{StaticResource BrushTextSecondary}" Margin="0,4,0,0" />
+                        </StackPanel>
+                        <StackPanel Grid.Row="3" Grid.Column="1" Margin="12,0,0,14">
+                            <TextBlock Text="Password *" FontSize="12" FontWeight="SemiBold" Foreground="{StaticResource BrushTextSecondary}" Margin="0,0,0,6" />
+                            <PasswordBox x:Name="PasswordBox" Height="38" Padding="10,7" FontSize="13" Background="{StaticResource BrushInputBg}" Foreground="{StaticResource BrushInputText}" BorderBrush="{StaticResource BrushBorder}" />
+                            <TextBlock Text="Minimal 8 karakter" FontSize="10" Foreground="{StaticResource BrushTextSecondary}" Margin="0,4,0,0" />
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="4" Grid.Column="0" Margin="0,0,12,14">
+                            <TextBlock Text="Konfirmasi password *" FontSize="12" FontWeight="SemiBold" Foreground="{StaticResource BrushTextSecondary}" Margin="0,0,0,6" />
+                            <PasswordBox x:Name="ConfirmPasswordBox" Height="38" Padding="10,7" FontSize="13" Background="{StaticResource BrushInputBg}" Foreground="{StaticResource BrushInputText}" BorderBrush="{StaticResource BrushBorder}" />
+                        </StackPanel>
+                        <StackPanel Grid.Row="4" Grid.Column="1" Margin="12,0,0,14">
+                            <TextBlock Text="Alamat domisili (opsional)" FontSize="12" FontWeight="SemiBold" Foreground="{StaticResource BrushTextSecondary}" Margin="0,0,0,6" />
+                            <TextBox x:Name="AddressBox" Height="62" Padding="10,7" FontSize="13" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" VerticalContentAlignment="Top" Background="{StaticResource BrushInputBg}" Foreground="{StaticResource BrushInputText}" BorderBrush="{StaticResource BrushBorder}" />
+                        </StackPanel>
+                    </Grid>
+
+                    <TextBlock x:Name="ErrorText" Foreground="{StaticResource BrushDanger}" FontSize="12" TextWrapping="Wrap" Margin="0,0,0,12" />
+                    <TextBlock Text="Akun yang didaftarkan melalui halaman ini hanya memiliki akses sebagai penghuni. Akun pengelola dibuat oleh administrator." FontSize="11" Foreground="{StaticResource BrushTextSecondary}" TextWrapping="Wrap" Margin="0,0,0,16" />
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button Content="Batal" Style="{StaticResource BtnOutline}" MinWidth="100" Margin="0,0,10,0" Click="Cancel_Click" />
+                        <Button Content="Buat Akun" Style="{StaticResource BtnPrimary}" MinWidth="130" Click="Register_Click" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </ScrollViewer>
+    </Grid>
+</Window>
