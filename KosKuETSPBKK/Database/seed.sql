@@ -1,0 +1,5 @@
+-- Akun dan data demo dibuat otomatis pada first-run oleh DatabaseInitializer.cs.
+-- Kredensial demo:
+-- Administrator: admin / admin123
+-- Penghuni     : mahasiswa / mahasiswa123
+-- Password disimpan sebagai PBKDF2-SHA256 hash; jangan menyimpan password teks biasa.
